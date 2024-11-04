@@ -105,24 +105,50 @@
             os recursos necessários.
           </p>
           <img
-            class="r-stretch"
+          class="img-template"
             src="assets/imgs/nx-architecture.svg"
             alt="nx"
-          />
+          /><br />
+          <a class="font-size-rem" href="https://nx.dev/getting-started/why-nx#how-does-nx-work" target="_blank">https://nx.dev/getting-started/why-nx#how-does-nx-work</a>
         </section>
-		<section>
-			<h3>Tecnologias incluídas no projeto</h3>
-			<p class="display-flex-center">
-				<img class="size-img" src="assets/imgs/Angular_gradient.png" alt="Angular" />
-				<img class="size-img" src="assets/imgs/nx-logo.png" alt="Nx" />
-				<img class="size-img" src="assets/imgs/cypress.jpg" alt="Cypress" />
-			</p>
-			<p class="display-flex-center">
-				<img class="size-img" src="assets/imgs/jest.png" alt="Jest" />
-				<img class="size-img" src="assets/imgs/tailwind.jpg" alt="Tailiwind" />
-				<img class="size-img" src="assets/imgs/daisyui.png" alt="DaisyUI" />
-			</p>
-		</section>
+        <section>
+          <h4>Plugins - Tecnologias incluídas no projeto</h4>
+          <p class="display-flex-center">
+            <img
+              class="size-img"
+              src="assets/imgs/Angular_gradient.png"
+              alt="Angular"
+            />
+            <img class="size-img" src="assets/imgs/nx-logo.png" alt="Nx" />
+            <img class="size-img" src="assets/imgs/cypress.jpg" alt="Cypress" />
+          </p>
+          <p class="display-flex-center">
+            <img class="size-img" src="assets/imgs/jest.png" alt="Jest" />
+            <img
+              class="size-img"
+              src="assets/imgs/tailwind.jpg"
+              alt="Tailiwind"
+            />
+            <img class="size-img" src="assets/imgs/daisyui.png" alt="DaisyUI" />
+          </p>
+        </section>
+        <section>
+          <h4 data-id="code-title">Como criar novo projeto com Nx com comando seguinte:</h4>
+          <pre><code class="font-size-rem" data-trim data-noescape>
+            ~❯ npx create-nx-workspace@latest angular-monorepo --preset=angular-monorepo            
+            
+            NX   Let's create a new workspace [https://nx.dev/getting-started/intro]
+            
+            ✔ Application name · angular-store
+            ✔ Which bundler would you like to use? · esbuild
+            ✔ Default stylesheet format · scss
+            ✔ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? · No
+            ✔ Test runner to use for end to end (E2E) tests · cypress
+            ✔ Which CI provider would you like to use? · github
+          </code></pre>
+        <a class="font-size-rem" href="https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial#creating-a-new-angular-monorepo" target="_blank">https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial#creating-a-new-angular-monorepo</a>
+        </section>
+        <section>
         <section data-auto-animate>
           <h4 data-id="code-title">Configuração do Typescript compartilhada</h4>
           <p class="font-size-30">
@@ -163,6 +189,40 @@
 				</code>
 			</pre>
         </section>
+        <section>
+          <h4 data-id="code-title">Estrutura do projeto</h4>
+          <pre><code class="font-size-rem-1-4" data-trim data-line-numbers="|4-9|11-15|19-23|24-25">
+            <script type="text/template">
+            └─ angular-monorepo-nx
+              ├─ ...
+              ├─ apps
+              │  ├─ angular-monorepo-nx
+              │  │  ├─ src
+              │  │  │  ├─ app
+              │  │  │  │  ├─ app.component.ts
+              │  │  │  │  ├─ app.config.ts
+              │  │  │  │  └─ app.routes.ts
+              │  │  │  └─ ...
+              │  │  ├─ eslint.config.js
+              │  │  ├─ jest.config.ts
+              │  │  ├─ project.json
+              │  │  ├─ tailwind.config.js
+              │  │  ├─ tsconfig.app.json
+              │  │  └─ ...
+              │  └─ angular-monorepo-nx-e2e
+              │     └─ ...
+              ├─ libs
+              │  ├─ admin
+              │  ├─ home              
+              │  ├─ layouts
+              │  └─ share
+              ├─ nx.json
+              ├─ tsconfig.base.json
+              └─ package.json
+            </script>
+          </code></pre>
+        </section>
+      </section>
         <section data-auto-animate>
           <h4 data-id="code-title">Configuração do Nx</h4>
           <p class="font-size-20">
@@ -275,7 +335,7 @@
             as vantagens do Tailwind para gerar estilos CSS personalizados.
           </p>
           <pre data-id="code-animation">
-							<code class="hljs javascript" data-trim data-line-numbers="|1|4-10|18-28">
+							<code class="hljs javascript" data-trim data-line-numbers="|1|4-10|18-22">
 								<script type="text/template">
 								  const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
 								  const { join } = require('path');
@@ -298,22 +358,36 @@
 									daisyui: {
 									  themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
 									  darkTheme: "cupcake", // name of one of the included themes for dark mode
-									  base: true, // applies background color and foreground color for root element by default
-									  styled: true, // include daisyUI colors and design decisions for all components
-									  utils: true, // adds responsive and modifier utility classes
-									  prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-									  logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-									  themeRoot: ":root", // The element that receives theme color CSS variables
 									},
 								  };				  									
 						</script>
 					</code>
 				</pre>
+        <a class="font-size-rem" href="https://nx.dev/recipes/angular/using-tailwind-css-with-angular-projects" target="_blank">
+          https://nx.dev/recipes/angular/using-tailwind-css-with-angular-projects
+        </a><br />
+        <a class="font-size-rem" href="https://daisyui.com/docs/install/" target="_blank">
+          https://daisyui.com/docs/install/
+        </a>
         </section>
-		<section>
-			<h4>Extensão Nx Console no VS Code</h4>
-			<img src="assets/imgs/nx-console.png" alt="nx console" class="r-stretch" />
-		</section>
+        <section>
+          <section>
+            <h4>Extensão Nx Console no VS Code</h4>
+            <img
+              src="assets/imgs/nx-console.png"
+              alt="nx console"
+              class="r-stretch"
+            />
+          </section>
+          <section>
+            <h4>Demonstração de Extensão Nx Console no VS Code</h4>
+            <img
+              src="assets/imgs/nx-console-graph.png"
+              alt="nx console"
+              class="r-stretch"
+            />
+          </section>
+        </section>
         <section>
           <h4>Nx Graph</h4>
           <p class="font-size-20">
@@ -334,29 +408,34 @@
             class="r-stretch"
           />
         </section>
-		<section>
-			<h4>Gerar libs e componentes</h4>
-			<img
-			  src="assets/imgs/generate.png"
-			  alt="graph"
-			  class="r-stretch"
-			/>
-		  </section>
+        <section>
+          <h4>Gerar libs e componentes</h4>
+          <img src="assets/imgs/generate.png" alt="graph" class="r-stretch" />
+        </section>
         <section>
           <h4>Nx Cloud - Integração Contínua e Rápida</h4>
           <p class="font-size-20">
-			O Nx Cloud segue um modelo de CI baseado em tarefas que não é apenas rápido, mas também robusto . Em vez de atribuir estaticamente o trabalho às máquinas, você pode imaginar uma pilha de tarefas que são selecionadas automaticamente pelos agentes na infraestrutura do Nx Cloud.
+            O Nx Cloud segue um modelo de CI baseado em tarefas que não é apenas
+            rápido, mas também robusto . Em vez de atribuir estaticamente o
+            trabalho às máquinas, você pode imaginar uma pilha de tarefas que
+            são selecionadas automaticamente pelos agentes na infraestrutura do
+            Nx Cloud.
           </p>
-          <video class="r-stretch" data-autoplay src="assets/videos/midia01.mp4"></video>
+          <img
+          src="assets/imgs/nx-cloud2.png"
+          alt="graph"
+          class="r-stretch"
+        />
         </section>
-		<section>
-			Demonstração Prática
-		</section>
-		<section>
-			Perguntas e Dúvidas
-			<br /><br />
-			<i class="fa-regular fa-circle-question" style="font-size: 50px;"></i>
-		</section>
+        <section>Demonstração Prática
+          <br /><br />
+          <i class="fa-solid fa-laptop" style="font-size: 100px"></i>
+        </section>
+        <section>
+          Perguntas e Dúvidas
+          <br /><br />
+          <i class="fa-regular fa-circle-question" style="font-size: 100px"></i>
+        </section>
         <section>
           <div>
             <h3>Obrigado!</h3>
@@ -379,23 +458,22 @@
           <h4 class="left-title">Fontes de Pesquisa</h4>
           <ul class="line-height">
             <li>
-              <a href="https://nx.dev/getting-started/intro" target="_blank"
-                >https://nx.dev/getting-started/intro</a
-              >
+              <a href="https://nx.dev/getting-started/intro" target="_blank">
+                https://nx.dev/getting-started/intro</a>
             </li>
             <li>
-              <a
-                href="https://monorepo.tools/#what-is-a-monorepo"
-                target="_blank"
-                >https://monorepo.tools/#what-is-a-monorepo</a
-              >
+              <a href="https://monorepo.tools/#what-is-a-monorepo" target="_blank">
+                https://monorepo.tools/#what-is-a-monorepo</a>
             </li>
-            <li>https://github.com/claboran/nx-quik</li>
-            <li>https://www.youtube.com/watch?v=-CX61X0_Wx4</li>
-            <li>https://github.com/ErickRodrCodes/angular-toaster/tree/main</li>
             <li>
-              https://andrewrosario.medium.com/definindo-limites-de-m%C3%B3dulos-no-nx-com-module-boundaries-4088f758957f
+              <a href="https://github.com/claboran/nx-quik" target="_blank">
+              https://github.com/claboran/nx-quik
+            </a>              
             </li>
+            <li>
+              <a href="https://github.com/ErickRodrCodes/angular-toaster/tree/main" target="_blank">
+                https://github.com/ErickRodrCodes/angular-toaster/tree/main</a>
+           </li>          
           </ul>
         </section>
       </div>
