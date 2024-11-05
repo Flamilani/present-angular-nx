@@ -149,6 +149,88 @@
         <a class="font-size-rem" href="https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial#creating-a-new-angular-monorepo" target="_blank">https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial#creating-a-new-angular-monorepo</a>
         </section>
         <section>
+        <section>
+          <h4 data-id="code-title">Estrutura do projeto</h4>
+          <pre><code class="font-size-rem-1-4" data-trim data-line-numbers="|4-9|11-15|19-23|24-25">
+            <script type="text/template">
+            └─ angular-monorepo-nx
+              ├─ ...
+              ├─ apps
+              │  ├─ angular-monorepo-nx
+              │  │  ├─ src
+              │  │  │  ├─ app
+              │  │  │  │  ├─ app.component.ts
+              │  │  │  │  ├─ app.config.ts
+              │  │  │  │  └─ app.routes.ts
+              │  │  │  └─ ...
+              │  │  ├─ eslint.config.js
+              │  │  ├─ jest.config.ts
+              │  │  ├─ project.json
+              │  │  ├─ tailwind.config.js
+              │  │  ├─ tsconfig.app.json
+              │  │  └─ ...
+              │  └─ angular-monorepo-nx-e2e
+              │     └─ ...
+              ├─ libs
+              │  ├─ admin
+              │  ├─ home              
+              │  ├─ layouts
+              │  └─ share
+              ├─ nx.json
+              ├─ tsconfig.base.json
+              └─ package.json
+            </script>
+          </code></pre>
+        </section>
+      </section>
+        <section>
+          <section>
+            <h4>Extensão Nx Console no VS Code</h4>
+            <img
+              src="assets/imgs/nx-console.png"
+              alt="nx console"
+              class="r-stretch"
+            />
+          </section>
+          <section>
+            <h4>Demonstração de Extensão Nx Console no VS Code</h4>
+            <img
+              src="assets/imgs/nx-console-graph.png"
+              alt="nx console"
+              class="r-stretch"
+            />
+          </section>
+        </section>
+        <section>
+          <h4>Nx Graph</h4>
+          <p class="font-size-20">
+            Para rodar comando npx nx graph para visualizar desenho de
+            dependências (libs)
+          </p>
+          <img src="assets/imgs/graph.png" alt="nx graph" class="r-stretch" />
+        </section>
+        <section>
+          <h4>Nx show project</h4>
+          <p class="font-size-20">
+            Para rodar comando npx nx show project home para executar tarefas
+            (run tasks)
+          </p>
+          <img
+            src="assets/imgs/nx-show-project.png"
+            alt="graph"
+            class="r-stretch"
+          />
+        </section>
+        <section>
+          <section>
+            <h4>Gerar libs</h4>
+            <img src="assets/imgs/generate-library.png" alt="Gerar libs" class="r-stretch" />
+          </section>
+          <section>
+            <h4>Gerar componentes</h4>
+            <img src="assets/imgs/generate.png" alt="Gerar componentes" class="r-stretch" />
+          </section>
+        </section>
         <section data-auto-animate>
           <h4 data-id="code-title">Configuração do Typescript compartilhada</h4>
           <p class="font-size-30">
@@ -189,40 +271,6 @@
 				</code>
 			</pre>
         </section>
-        <section>
-          <h4 data-id="code-title">Estrutura do projeto</h4>
-          <pre><code class="font-size-rem-1-4" data-trim data-line-numbers="|4-9|11-15|19-23|24-25">
-            <script type="text/template">
-            └─ angular-monorepo-nx
-              ├─ ...
-              ├─ apps
-              │  ├─ angular-monorepo-nx
-              │  │  ├─ src
-              │  │  │  ├─ app
-              │  │  │  │  ├─ app.component.ts
-              │  │  │  │  ├─ app.config.ts
-              │  │  │  │  └─ app.routes.ts
-              │  │  │  └─ ...
-              │  │  ├─ eslint.config.js
-              │  │  ├─ jest.config.ts
-              │  │  ├─ project.json
-              │  │  ├─ tailwind.config.js
-              │  │  ├─ tsconfig.app.json
-              │  │  └─ ...
-              │  └─ angular-monorepo-nx-e2e
-              │     └─ ...
-              ├─ libs
-              │  ├─ admin
-              │  ├─ home              
-              │  ├─ layouts
-              │  └─ share
-              ├─ nx.json
-              ├─ tsconfig.base.json
-              └─ package.json
-            </script>
-          </code></pre>
-        </section>
-      </section>
         <section data-auto-animate>
           <h4 data-id="code-title">Configuração do Nx</h4>
           <p class="font-size-20">
@@ -369,48 +417,6 @@
         <a class="font-size-rem" href="https://daisyui.com/docs/install/" target="_blank">
           https://daisyui.com/docs/install/
         </a>
-        </section>
-        <section>
-          <section>
-            <h4>Extensão Nx Console no VS Code</h4>
-            <img
-              src="assets/imgs/nx-console.png"
-              alt="nx console"
-              class="r-stretch"
-            />
-          </section>
-          <section>
-            <h4>Demonstração de Extensão Nx Console no VS Code</h4>
-            <img
-              src="assets/imgs/nx-console-graph.png"
-              alt="nx console"
-              class="r-stretch"
-            />
-          </section>
-        </section>
-        <section>
-          <h4>Nx Graph</h4>
-          <p class="font-size-20">
-            Para rodar comando npx nx graph para visualizar desenho de
-            dependências (libs)
-          </p>
-          <img src="assets/imgs/graph.png" alt="graph" class="r-stretch" />
-        </section>
-        <section>
-          <h4>Nx show project</h4>
-          <p class="font-size-20">
-            Para rodar comando npx nx show project home para executar tarefas
-            (run tasks)
-          </p>
-          <img
-            src="assets/imgs/nx-show-project.png"
-            alt="graph"
-            class="r-stretch"
-          />
-        </section>
-        <section>
-          <h4>Gerar libs e componentes</h4>
-          <img src="assets/imgs/generate.png" alt="graph" class="r-stretch" />
         </section>
         <section>
           <h4>Nx Cloud - Integração Contínua e Rápida</h4>
